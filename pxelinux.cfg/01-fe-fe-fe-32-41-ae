@@ -1,0 +1,3 @@
+LABEL linux
+    KERNEL jupiter.itb
+    APPEND console=ttyS0,115200 earlycon=sbi loglevel=8 rdinit=/sbin/init

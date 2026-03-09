@@ -1,0 +1,3 @@
+LABEL linux
+    KERNEL orange.itb
+    APPEND console=ttyS0,115200 root=/dev/ram rw

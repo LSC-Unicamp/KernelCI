@@ -1,0 +1,49 @@
+/dts-v1/;
+
+/ {
+    description = "FIT Image para Milk-V Jupiter - Boot via Rede";
+    #address-cells = <1>;
+
+    images {
+        kernel {
+            description = "Linux Kernel";
+            data = /incbin/("./Image.gz");
+            type = "kernel";
+            arch = "riscv";
+            os = "linux";
+            compression = "gzip";
+            load = <0x08000000>;
+            entry = <0x08000000>;
+            hash-1 {
+                algo = "sha1";
+            };
+        };
+        fdt {
+            description = "Device Tree Milk-V Jupiter";
+            data = /incbin/("./m1-x_milkv-jupiter.dtb");
+            type = "flat_dt";
+            arch = "riscv";
+            compression = "none";
+        };
+        ramdisk {
+            description = "Initramfs Debian";
+            data = /incbin/("./initramfs.cpio.gz");
+            type = "ramdisk_image";
+            arch = "riscv";
+            os = "linux";
+            compression = "gzip"; 
+            load = <0x88000000>;
+        };
+    };
+
+    configurations {
+        default = "config-1";
+
+        config-1 {
+            description = "Boot com Ramdisk";
+            kernel = "kernel";
+            fdt = "fdt";
+            ramdisk = "ramdisk";
+        };
+    };
+};
