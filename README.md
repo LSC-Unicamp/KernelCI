@@ -1,6 +1,5 @@
 # KernelCI RISC-V lab compose skeleton
 
-Ajuste primeiro:
 - `dhcp-tftp/dnsmasq.conf`: interface, range, MACs e IPs.
 - `dhcp-tftp/tftp/boards/*/*.cmd`: URLs, endereços de memória U-Boot, console e DTB.
 - `ser2net/ser2net.yaml`: `/dev/ttyUSBx` e portas.
