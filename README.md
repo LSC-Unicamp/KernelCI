@@ -1,38 +1,27 @@
-# Kernel CI RISC-V Lab project
+# KernelCI RISC-V lab compose skeleton
 
+Ajuste primeiro:
+- `dhcp-tftp/dnsmasq.conf`: interface, range, MACs e IPs.
+- `dhcp-tftp/tftp/boards/*/*.cmd`: URLs, endereços de memória U-Boot, console e DTB.
+- `ser2net/ser2net.yaml`: `/dev/ttyUSBx` e portas.
+- `power/*.sh`: comandos reais de power control.
+- `lava/devices/*.jinja2`: connection e hard_reset.
 
-## How to build rootfs image
-
+Subir:
 ```bash
-cd rootfs_dir
-sudo su
-find . | cpio -H newc -o | gzip > ../initramfs.cpio.gz
+docker compose up -d
 ```
 
-## How to build kernel image
-
+Build local:
 ```bash
-cd kernel_dir
-export ARCH=riscv export 
-CROSS_COMPILE=riscv64-linux-gnu- 
-make k1_defconfig
+mkdir -p work
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git work/linux
+docker compose exec builder build-kernel.sh
+ln -sfn local/<BUILD_DIR> artifacts/current
 ```
 
-Add rootfs image to kernel image in make menuconfig
+LAVA UI:
+- http://HOST:8000
 
-```bash
-make menuconfig
-```
-
-Then build kernel image
-
-```bash
-LOCALVERSION="" make -j$(nproc) Image.gz dtbs modules
-```
-
-## How to generate itb image
-
-```bash
-cd /srv/tftp
-mkimage -f in.its out.itb
-```
+Artifacts:
+- http://HOST:8080/artifacts/

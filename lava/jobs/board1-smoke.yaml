@@ -1,0 +1,47 @@
+job_name: board1 riscv smoke
+visibility: public
+priority: medium
+timeout:
+  minutes: 30
+device_type: riscv-generic
+
+actions:
+- deploy:
+    timeout:
+      minutes: 10
+    to: tftp
+    kernel:
+      url: http://192.168.50.1:8080/artifacts/current/Image
+      type: image
+    dtb:
+      url: http://192.168.50.1:8080/artifacts/current/board1.dtb
+    os: oe
+
+- boot:
+    method: u-boot
+    commands: nfs
+    auto_login:
+      login_prompt: 'login:'
+      username: root
+    prompts:
+      - 'root@.*#'
+    timeout:
+      minutes: 10
+
+- test:
+    timeout:
+      minutes: 10
+    definitions:
+    - repository:
+        metadata:
+          format: Lava-Test Test Definition 1.0
+          name: smoke-inline
+        run:
+          steps:
+            - uname -a
+            - dmesg | tail -100
+            - test -d /proc
+            - ip addr
+      from: inline
+      name: smoke
+      path: inline/smoke.yaml

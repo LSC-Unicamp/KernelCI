@@ -1,0 +1,9 @@
+%YAML 1.1
+---
+defaults:
+  name: local
+  value: true
+
+connection: &board1
+  accepter: telnet,tcp,7001
+  connector: serialdev,/dev/ttyUSB0,115200n81,local

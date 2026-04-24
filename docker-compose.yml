@@ -1,0 +1,104 @@
+services:
+  artifacts:
+    image: nginx:stable-alpine
+    container_name: kci-artifacts
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./artifacts:/usr/share/nginx/html/artifacts:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+  builder:
+    build: ./build
+    container_name: kci-builder
+    working_dir: /work
+    volumes:
+      - ./work:/work
+      - ./artifacts:/artifacts
+      - ccache:/ccache
+    environment:
+      - ARCH=riscv
+      - CROSS_COMPILE=riscv64-linux-gnu-
+      - CCACHE_DIR=/ccache
+    command: ["sleep", "infinity"]
+
+  pxe:
+    image: quay.io/poseidon/dnsmasq:v0.5.0-32-g62f7
+    container_name: kci-pxe
+    restart: unless-stopped
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ./dhcp-tftp/dnsmasq.conf:/etc/dnsmasq.conf:ro
+      - ./dhcp-tftp/tftp:/srv/tftp:ro
+
+  nfs:
+    image: itsthenetwork/nfs-server-alpine:latest
+    container_name: kci-nfs
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    environment:
+      - SHARED_DIRECTORY=/exports/rootfs
+    volumes:
+      - ./nfs/rootfs:/exports/rootfs:rw
+
+  ser2net:
+    image: alpine:3.20
+    container_name: kci-ser2net
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    volumes:
+      - ./ser2net/ser2net.yaml:/etc/ser2net.yaml:ro
+      - /dev:/dev
+    command: sh -c "apk add --no-cache ser2net && ser2net -n -c /etc/ser2net.yaml"
+
+  lava-postgres:
+    image: postgres:15
+    container_name: lava-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: lavaserver
+      POSTGRES_PASSWORD: lava
+      POSTGRES_DB: lavaserver
+    volumes:
+      - lava-db:/var/lib/postgresql/data
+
+  lava-server:
+    image: lavasoftware/lava-server:latest
+    container_name: lava-server
+    restart: unless-stopped
+    depends_on:
+      - lava-postgres
+    ports:
+      - "8000:80"
+    volumes:
+      - ./lava/devices:/etc/lava-server/dispatcher-config/devices
+      - ./lava/device-types:/etc/lava-server/dispatcher-config/device-types
+      - lava-media:/var/lib/lava-server/default/media
+      - lava-etc:/etc/lava-server
+
+  lava-dispatcher:
+    image: lavasoftware/lava-dispatcher:latest
+    container_name: lava-dispatcher
+    restart: unless-stopped
+    depends_on:
+      - lava-server
+    network_mode: host
+    privileged: true
+    volumes:
+      - ./lava/devices:/etc/lava-server/dispatcher-config/devices
+      - ./lava/device-types:/etc/lava-server/dispatcher-config/device-types
+      - ./lava/jobs:/jobs
+      - ./power:/power
+      - /dev:/dev
+
+volumes:
+  ccache:
+  lava-db:
+  lava-media:
+  lava-etc:
