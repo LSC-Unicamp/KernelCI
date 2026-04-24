@@ -24,7 +24,7 @@ services:
     command: ["sleep", "infinity"]
 
   pxe:
-    image: quay.io/poseidon/dnsmasq:v0.5.0-32-g62f7
+    image: quay.io/poseidon/dnsmasq:v0.5.0-48-gbbba844
     container_name: kci-pxe
     restart: unless-stopped
     network_mode: host
