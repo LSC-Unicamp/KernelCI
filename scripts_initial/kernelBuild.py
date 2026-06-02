@@ -6,7 +6,7 @@ def configure_and_make():
     cross_compile = "riscv64-linux-gnu-"
     nproc = multiprocessing.cpu_count()
 
-    # Módulos específicos para VisionFive 2 JH7110
+    # AQUI TEM Q MUDAR PRA CADA PLACA / THIS HAS TO CHANGE FOR EACH BOARD USED
     configs = [
         "CONFIG_NET_VENDOR_STMICRO", "CONFIG_STMMAC_ETH", "CONFIG_STMMAC_PLATFORM",
         "CONFIG_DWMAC_STARFIVE", "CONFIG_MOTORCOMM_PHY", "CONFIG_CLK_STARFIVE_JH7110_SYS",
@@ -15,10 +15,9 @@ def configure_and_make():
     ]
 
     print("Configurando o Kernel...")
-    # Gera o .config inicial
+
     subprocess.run(f"make ARCH={arch} CROSS_COMPILE={cross_compile} olddefconfig", shell=True, check=True)
 
-    # Habilita as flags via script de config do kernel
     for cfg in configs:
         subprocess.run(f"./scripts/config --enable {cfg}", shell=True, check=True)
 
