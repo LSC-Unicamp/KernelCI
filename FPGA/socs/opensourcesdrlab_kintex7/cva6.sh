@@ -1,0 +1,3 @@
+python opensourcesdrlab_kintex7.py --build \
+    --cpu-type=cva6 --cpu-variant=full \
+    --sys-clk-freq 100e6 --with-ethernet --with-spi-sdcard --with-video-terminal --remote-ip 192.168.0.1
