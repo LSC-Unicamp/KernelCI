@@ -1,6 +1,5 @@
 {
-    "board": "nexys4ddr",
-    "core": "rocket",
-    "fw_jump": "fw_jump.bin",
-    "dtb": "system.dtb"
+    "rootfs.cpio.gz": "0x82000000",
+    "Image":          "0x80200000",
+    "fw_jump.bin":    "0x80000000"
 }
