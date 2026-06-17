@@ -1,0 +1,228 @@
+/dts-v1/;
+
+/ {
+	#address-cells = <1>;
+	#size-cells = <1>;
+	compatible = "freechips,rocketchip-unknown-dev";
+	model = "Open Source SDR LAB Kintex-7 Rocket";
+	chosen {
+		/* Endereço do earlycon atualizado para 0x12004800 */
+		bootargs = "console=liteuart earlycon=liteuart,0x12004800 swiotlb=noforce rootwait root=/dev/ram0";
+		linux,initrd-start = <0x82000000>;
+		linux,initrd-end   = <0x820DC4DD>; /* Ajuste para o tamanho real da sua initramfs */
+	};
+	L13: cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		timebase-frequency = <1000000>;
+		L6: cpu@0 {
+			clock-frequency = <100000000>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <1>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39";
+			next-level-cache = <&L8>;
+			reg = <0x0>;
+			riscv,isa = "rv64imafdcZicsr_Zifencei_Zihpm_Xrocket";
+			riscv,pmpgranularity = <4>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			tlb-split;
+			L4: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L16: cpu@1 {
+			clock-frequency = <100000000>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <1>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39";
+			next-level-cache = <&L8>;
+			reg = <0x1>;
+			riscv,isa = "rv64imafdcZicsr_Zifencei_Zihpm_Xrocket";
+			riscv,pmpgranularity = <4>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			tlb-split;
+			L14: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L26: cpu@2 {
+			clock-frequency = <100000000>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <1>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39";
+			next-level-cache = <&L8>;
+			reg = <0x2>;
+			riscv,isa = "rv64imafdcZicsr_Zifencei_Zihpm_Xrocket";
+			riscv,pmpgranularity = <4>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			tlb-split;
+			L24: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L36: cpu@3 {
+			clock-frequency = <100000000>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <1>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39";
+			next-level-cache = <&L8>;
+			reg = <0x3>;
+			riscv,isa = "rv64imafdcZicsr_Zifencei_Zihpm_Xrocket";
+			riscv,pmpgranularity = <4>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			tlb-split;
+			L34: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+	};
+	L8: memory@80000000 {
+		device_type = "memory";
+		reg = <0x80000000 0x40000000>; /* 1GB SDRAM */
+	};
+	clocks {
+		sys_clk: litex_sys_clk {
+			#clock-cells = <0>;
+			compatible = "fixed-clock";
+			clock-frequency = <100000000>;
+		};
+	};
+	L12: soc {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "freechips,rocketchip-unknown-soc", "simple-bus";
+		ranges;
+		L2: clint@2000000 {
+			compatible = "riscv,clint0";
+			interrupts-extended = <&L4 3 &L4 7 &L14 3 &L14 7 &L24 3 &L24 7 &L34 3 &L34 7>;
+			reg = <0x2000000 0x10000>;
+			reg-names = "control";
+		};
+		L3: debug-controller@0 {
+			compatible = "sifive,debug-013", "riscv,debug-013";
+			interrupts-extended = <&L4 0xFFFF &L14 0xFFFF &L24 0xFFFF &L34 0xFFFF>;
+			reg = <0x0 0x1000>;
+			reg-names = "control";
+		};
+		L0: error-device@3000 {
+			compatible = "sifive,error0";
+			reg = <0x3000 0x1000>;
+		};
+		L7: external-interrupts {
+			interrupt-parent = <&L1>;
+			interrupts = <1 2 3 4 5 6 7 8>;
+		};
+		L1: interrupt-controller@c000000 {
+			#interrupt-cells = <1>;
+			compatible = "riscv,plic0";
+			interrupt-controller;
+			interrupts-extended = <&L4 11 &L4 9 &L14 11 &L14 9 &L24 11 &L24 9 &L34 11 &L34 9>;
+			reg = <0xc000000 0x4000000>;
+			reg-names = "control";
+			riscv,max-priority = <7>;
+			riscv,ndev = <8>;
+		};
+		L10: rom@10000 {
+			compatible = "sifive,rom0";
+			reg = <0x10000 0x10000>;
+			reg-names = "mem";
+		};
+		soc_ctrl0: soc_controller@12000000 {
+			compatible = "litex,soc-controller";
+			reg = <0x12000000 0xc>;
+		};
+		
+		/* Endereço base da UART atualizado */
+		liteuart0: serial@12004800 {
+			compatible = "litex,liteuart";
+			reg = <0x12004800 0x100>;
+			interrupt-parent = <&L1>;
+			interrupts = <1>;
+		};
+		mac0: mac@12001000 {
+			compatible = "litex,liteeth";
+			reg = <0x12001000 0x100>,
+				<0x12001800 0x100>,
+				<0x30000000 0x2000>;
+			reg-names = "mac", "mdio", "buffer";
+			litex,rx-slots = <2>;
+			litex,tx-slots = <2>;
+			litex,slot-size = <0x800>;
+			interrupt-parent = <&L1>;
+			interrupts = <3>;
+		};
+		
+		/* Endereço base do SPI SDCard atualizado e sem DMA/IRQs */
+		spisdcard0: spisdcard@12003800 {
+			compatible = "litex,spisdcard";
+			reg = <0x12003800 0x100>;
+			reg-names = "core";
+			clocks = <&sys_clk>;
+		};
+		
+		/* Endereço base do Timer atualizado */
+		timer@12004000 {
+			compatible = "litex,timer";
+			reg = <0x12004000 0x20>;
+			clocks = <&sys_clk>;
+			interrupt-parent = <&L1>;
+			interrupts = <2>;
+		};
+	};
+};

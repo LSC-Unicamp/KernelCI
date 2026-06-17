@@ -1,0 +1,84 @@
+/dts-v1/;
+
+/ {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "digilent,arty-a7", "litex,litex-soc";
+    model = "LiteX SoC on Arty A7";
+
+    cpus {
+        #address-cells = <1>;
+        #size-cells = <0>;
+        timebase-frequency = <50000000>;
+
+        cpu0: cpu@0 {
+            device_type = "cpu";
+            compatible = "riscv";
+            reg = <0>;
+            status = "okay";
+            riscv,isa = "rv64imafdc";
+            mmu-type = "riscv,sv39";
+            clock-frequency = <50000000>;
+
+            // CORREÇÃO: Adicionado o rótulo 'cpu_intc0:'
+            cpu_intc0: interrupt-controller {
+                #interrupt-cells = <1>;
+                compatible = "riscv,cpu-intc";
+                interrupt-controller;
+            };
+        };
+    };
+
+    memory@80000000 {
+        device_type = "memory";
+        // main_ram: 0x80000000, 268435456 bytes (256MB)
+        reg = <0x80000000 0x10000000>;
+    };
+
+    soc {
+        #address-cells = <1>;
+        #size-cells = <1>;
+        compatible = "simple-bus";
+        ranges;
+
+        // CORREÇÃO: Removido o zero à esquerda do nome do nó
+        clint@2000000 {
+            compatible = "riscv,clint0";
+            reg = <0x02000000 0x10000>;
+            // CORREÇÃO: Apontando para cpu_intc0 em vez de cpu0
+            interrupts-extended = <&cpu_intc0 3 &cpu_intc0 7>;
+        };
+
+        // CORREÇÃO: Removido o zero à esquerda do nome do nó
+        plic: plic@c000000 {
+            compatible = "riscv,plic0";
+            #interrupt-cells = <1>;
+            reg = <0x0c000000 0x400000>;
+            interrupt-controller;
+            // CORREÇÃO: Apontando para cpu_intc0 em vez de cpu0
+            interrupts-extended = <&cpu_intc0 9 &cpu_intc0 11>;
+            riscv,ndev = <3>;
+        };
+
+        uart0: serial@12004000 {
+            compatible = "litex,uart";
+            reg = <0x12004000 0x100>;
+            interrupt-parent = <&plic>;
+            interrupts = <0>;
+        };
+
+        timer0: timer@12003800 {
+            compatible = "litex,timer";
+            reg = <0x12003800 0x100>;
+            interrupt-parent = <&plic>;
+            interrupts = <1>;
+        };
+
+        ethmac: ethmac@30000000 {
+            compatible = "litex,ethmac";
+            reg = <0x30000000 0x2000>;
+            interrupt-parent = <&plic>;
+            interrupts = <2>;
+        };
+    };
+};

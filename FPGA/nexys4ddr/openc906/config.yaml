@@ -1,0 +1,14 @@
+board: nexys4ddr
+core: openc906
+
+soc_generator: soc.sh
+
+device_tree:
+  source: system.dts
+  binary: system.dtb
+
+firmware:
+  opensbi: fw_jump.bin
+
+boot:
+  boot.json

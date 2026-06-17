@@ -1,0 +1,6 @@
+{
+    "board": "opensourcesdrlab_kintex7",
+    "core": "rocket",
+    "fw_jump": "fw_jump.bin",
+    "dtb": "system.dtb"
+}

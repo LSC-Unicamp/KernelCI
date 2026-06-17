@@ -1,0 +1,6 @@
+{
+    "board": "artya7",
+    "core": "vexiiriscv",
+    "fw_jump": "fw_jump.bin",
+    "dtb": "system.dtb"
+}

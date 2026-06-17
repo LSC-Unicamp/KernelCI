@@ -1,0 +1,6 @@
+{
+    "board": "nexys4ddr",
+    "core": "vexiiriscv",
+    "fw_jump": "fw_jump.bin",
+    "dtb": "system.dtb"
+}
