@@ -49,8 +49,7 @@ def generate_dts(json_path, output_dts, output_boot_json):
     boot_config = {
         "fw_jump.bin": f"0x{opensbi_addr:08x}",
         "Image": f"0x{kernel_addr:08x}",
-        "rootfs.cpio.gz": f"0x{initrd_addr:08x}",
-        "system.dtb": f"0x{dtb_addr:08x}"
+        "rootfs.cpio.gz": f"0x{initrd_addr:08x}"
     }
 
     # Salva o boot.json

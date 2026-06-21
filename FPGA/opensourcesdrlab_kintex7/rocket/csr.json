@@ -4,13 +4,12 @@
         "ddrphy": 301991936,
         "ethmac": 301993984,
         "ethphy": 301996032,
-        "identifier_mem": 301998080,
-        "leds": 302000128,
-        "sdram": 302002176,
-        "spisdcard": 302004224,
-        "timer0": 302006272,
-        "uart": 302008320,
-        "video_terminal_vtg": 302010368
+        "leds": 301998080,
+        "sdram": 302000128,
+        "spisdcard": 302002176,
+        "timer0": 302004224,
+        "uart": 302006272,
+        "video_terminal_vtg": 302008320
     },
     "csr_registers": {
         "ctrl_reset": {
@@ -224,292 +223,292 @@
             "type": "ro"
         },
         "leds_out": {
-            "addr": 302000128,
+            "addr": 301998080,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_control": {
-            "addr": 302002176,
+            "addr": 302000128,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_command": {
-            "addr": 302002180,
+            "addr": 302000132,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_command_issue": {
-            "addr": 302002184,
+            "addr": 302000136,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_address": {
-            "addr": 302002188,
+            "addr": 302000140,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_baddress": {
-            "addr": 302002192,
+            "addr": 302000144,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_wrdata": {
-            "addr": 302002196,
+            "addr": 302000148,
             "size": 2,
             "type": "rw"
         },
         "sdram_dfii_pi0_rddata": {
-            "addr": 302002204,
+            "addr": 302000156,
             "size": 2,
             "type": "ro"
         },
         "sdram_dfii_pi1_command": {
-            "addr": 302002212,
+            "addr": 302000164,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi1_command_issue": {
-            "addr": 302002216,
+            "addr": 302000168,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi1_address": {
-            "addr": 302002220,
+            "addr": 302000172,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi1_baddress": {
-            "addr": 302002224,
+            "addr": 302000176,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi1_wrdata": {
-            "addr": 302002228,
+            "addr": 302000180,
             "size": 2,
             "type": "rw"
         },
         "sdram_dfii_pi1_rddata": {
-            "addr": 302002236,
+            "addr": 302000188,
             "size": 2,
             "type": "ro"
         },
         "sdram_dfii_pi2_command": {
-            "addr": 302002244,
+            "addr": 302000196,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi2_command_issue": {
-            "addr": 302002248,
+            "addr": 302000200,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi2_address": {
-            "addr": 302002252,
+            "addr": 302000204,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi2_baddress": {
-            "addr": 302002256,
+            "addr": 302000208,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi2_wrdata": {
-            "addr": 302002260,
+            "addr": 302000212,
             "size": 2,
             "type": "rw"
         },
         "sdram_dfii_pi2_rddata": {
-            "addr": 302002268,
+            "addr": 302000220,
             "size": 2,
             "type": "ro"
         },
         "sdram_dfii_pi3_command": {
-            "addr": 302002276,
+            "addr": 302000228,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi3_command_issue": {
-            "addr": 302002280,
+            "addr": 302000232,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi3_address": {
-            "addr": 302002284,
+            "addr": 302000236,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi3_baddress": {
-            "addr": 302002288,
+            "addr": 302000240,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi3_wrdata": {
-            "addr": 302002292,
+            "addr": 302000244,
             "size": 2,
             "type": "rw"
         },
         "sdram_dfii_pi3_rddata": {
-            "addr": 302002300,
+            "addr": 302000252,
             "size": 2,
             "type": "ro"
         },
         "spisdcard_control": {
-            "addr": 302004224,
+            "addr": 302002176,
             "size": 1,
             "type": "rw"
         },
         "spisdcard_status": {
-            "addr": 302004228,
+            "addr": 302002180,
             "size": 1,
             "type": "ro"
         },
         "spisdcard_mosi": {
-            "addr": 302004232,
+            "addr": 302002184,
             "size": 1,
             "type": "rw"
         },
         "spisdcard_miso": {
-            "addr": 302004236,
+            "addr": 302002188,
             "size": 1,
             "type": "ro"
         },
         "spisdcard_cs": {
-            "addr": 302004240,
+            "addr": 302002192,
             "size": 1,
             "type": "rw"
         },
         "spisdcard_loopback": {
-            "addr": 302004244,
+            "addr": 302002196,
             "size": 1,
             "type": "rw"
         },
         "spisdcard_clk_divider": {
-            "addr": 302004248,
+            "addr": 302002200,
             "size": 1,
             "type": "rw"
         },
         "timer0_load": {
-            "addr": 302006272,
+            "addr": 302004224,
             "size": 1,
             "type": "rw"
         },
         "timer0_reload": {
-            "addr": 302006276,
+            "addr": 302004228,
             "size": 1,
             "type": "rw"
         },
         "timer0_en": {
-            "addr": 302006280,
+            "addr": 302004232,
             "size": 1,
             "type": "rw"
         },
         "timer0_update_value": {
-            "addr": 302006284,
+            "addr": 302004236,
             "size": 1,
             "type": "rw"
         },
         "timer0_value": {
-            "addr": 302006288,
+            "addr": 302004240,
             "size": 1,
             "type": "ro"
         },
         "timer0_ev_status": {
-            "addr": 302006292,
+            "addr": 302004244,
             "size": 1,
             "type": "ro"
         },
         "timer0_ev_pending": {
-            "addr": 302006296,
+            "addr": 302004248,
             "size": 1,
             "type": "rw"
         },
         "timer0_ev_enable": {
-            "addr": 302006300,
+            "addr": 302004252,
             "size": 1,
             "type": "rw"
         },
         "uart_rxtx": {
-            "addr": 302008320,
+            "addr": 302006272,
             "size": 1,
             "type": "rw"
         },
         "uart_txfull": {
-            "addr": 302008324,
+            "addr": 302006276,
             "size": 1,
             "type": "ro"
         },
         "uart_rxempty": {
-            "addr": 302008328,
+            "addr": 302006280,
             "size": 1,
             "type": "ro"
         },
         "uart_ev_status": {
-            "addr": 302008332,
+            "addr": 302006284,
             "size": 1,
             "type": "ro"
         },
         "uart_ev_pending": {
-            "addr": 302008336,
+            "addr": 302006288,
             "size": 1,
             "type": "rw"
         },
         "uart_ev_enable": {
-            "addr": 302008340,
+            "addr": 302006292,
             "size": 1,
             "type": "rw"
         },
         "uart_txempty": {
-            "addr": 302008344,
+            "addr": 302006296,
             "size": 1,
             "type": "ro"
         },
         "uart_rxfull": {
-            "addr": 302008348,
+            "addr": 302006300,
             "size": 1,
             "type": "ro"
         },
         "video_terminal_vtg_enable": {
-            "addr": 302010368,
+            "addr": 302008320,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_hres": {
-            "addr": 302010372,
+            "addr": 302008324,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_hsync_start": {
-            "addr": 302010376,
+            "addr": 302008328,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_hsync_end": {
-            "addr": 302010380,
+            "addr": 302008332,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_hscan": {
-            "addr": 302010384,
+            "addr": 302008336,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_vres": {
-            "addr": 302010388,
+            "addr": 302008340,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_vsync_start": {
-            "addr": 302010392,
+            "addr": 302008344,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_vsync_end": {
-            "addr": 302010396,
+            "addr": 302008348,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_vscan": {
-            "addr": 302010400,
+            "addr": 302008352,
             "size": 1,
             "type": "rw"
         }
@@ -538,12 +537,11 @@
         "config_cpu_name": "rocket",
         "config_cpu_human_name": "RocketRV64[imac]",
         "config_cpu_nop": "nop",
-        "config_identifier": "Open Source SDR LAB XC7K325T 2026-06-17 01:38:46",
         "eth_dynamic_ip": null,
         "remoteip1": 192,
         "remoteip2": 168,
         "remoteip3": 0,
-        "remoteip4": 1,
+        "remoteip4": 190,
         "config_csr_data_width": 32,
         "config_csr_alignment": 32,
         "config_csr_ordering_big": null,

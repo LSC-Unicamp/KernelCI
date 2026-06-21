@@ -1,6 +1,5 @@
 {
     "board": "opensourcesdrlab_kintex7",
     "core": "openc906",
-    "fw_jump": "fw_jump.bin",
-    "dtb": "system.dtb"
+    "fw_jump": "fw_jump.bin"
 }
