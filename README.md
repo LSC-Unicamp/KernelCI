@@ -1,26 +1,18 @@
 # KernelCI RISC-V lab
 
-- `dhcp-tftp/dnsmasq.conf`: interface, range, MACs e IPs.
-- `dhcp-tftp/tftp/boards/*/*.cmd`: URLs, endereços de memória U-Boot, console e DTB.
-- `ser2net/ser2net.yaml`: `/dev/ttyUSBx` e portas.
-- `power/*.sh`: comandos reais de power control.
-- `lava/devices/*.jinja2`: connection e hard_reset.
+## Embedded
 
-Subir:
-```bash
-docker compose up -d
-```
+## FPGA
 
-Build local:
-```bash
-mkdir -p work
-git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git work/linux
-docker compose exec builder build-kernel.sh
-ln -sfn local/<BUILD_DIR> artifacts/current
-```
+## Questions and Suggestions
 
-LAVA UI:
-- http://HOST:8000
+The official documentation is available at: [kernelci.lsc.ic.unicamp.br](https://kernelci.lsc.ic.unicamp.br). If you have any questions or suggestions, feel free to use the [ISSUES](https://github.com/LSC-Unicamp/KernelCI/issues) section on GitHub. Contributions are welcome, and all [Pull Requests](https://github.com/LSC-Unicamp/KernelCI/pulls) will be reviewed.
 
-Artifacts:
-- http://HOST:8080/artifacts/
+## Contribution
+
+If you wish to contribute to the project, follow the instructions in the [CONTRIBUTING.md](https://github.com/Grande-Risco-5/Risco-5/blob/main/CONTRIBUTING.md) file.
+
+## License
+
+This project is licensed under **[MIT](https://github.com/LSC-Unicamp/KernelCI/blob/main/LICENSE)**, ensuring full usage freedom.
+
