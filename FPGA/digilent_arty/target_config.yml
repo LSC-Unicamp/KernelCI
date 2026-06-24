@@ -1,0 +1,29 @@
+# ==========================================
+# Configuração de Hardware (Target)
+# Placa: Arty A7-100T (Digilent)
+# ==========================================
+
+# Frequência do clock do sistema base em Hertz
+sys_clk_freq: 50e6
+
+# Flags globais de integração da placa
+target_flags:
+  # Periféricos físicos disponíveis e mapeados na placa
+  - "--with-ethernet"
+  - "--with-sdcard"
+  
+  # Configurações de rede estáticas da bancada de testes (KernelCI)
+  - "--eth-ip=192.168.0.110"
+  - "--remote-ip=192.168.0.193"
+  
+  # Configuração da porta serial para o picocom / ser2net
+  - "--uart-baudrate=115200"
+
+  # Configuração específica da placa Arty A7-100T
+  - "--variant a7-100" 
+
+# Metadados de infraestrutura (ignorados pelo LiteX)
+lab_bench:
+  bench_id: "arrtya7_dookan_00"
+  jtag_cable: "ft2232h"
+  power_switch_port: 4

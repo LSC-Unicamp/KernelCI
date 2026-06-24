@@ -1,16 +1,13 @@
 # ==========================================
-# CORE CONFIG: NaxRiscV (64-bit)
+# CORE CONFIG: Rocket (64-bit)
 # ==========================================
 
-cpu_type: "naxriscv"
-cpu_variant: "standard"
-cpu_count: 2
+cpu_type: "rocket"
+cpu_variant: "linux"
+cpu_count: 1
 
 # Flags de síntese exclusivas deste processador
-core_flags:
-  - "--with-fpu"
-  - "--with-rvc"
-  - "--xlen=64"
+core_flags: []
   #- "--with-jtag-bone"      # Habilita o túnel de debug JTAG->Wishbone específico do CVA6
   #- "--l2-size=65536"       # Pede 64KB de cache L2 (se o wrapper do CVA6 no LiteX suportar)
 

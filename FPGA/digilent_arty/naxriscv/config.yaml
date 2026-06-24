@@ -4,7 +4,7 @@
 
 cpu_type: "naxriscv"
 cpu_variant: "standard"
-cpu_count: 2
+cpu_count: 1
 
 # Flags de síntese exclusivas deste processador
 core_flags:
