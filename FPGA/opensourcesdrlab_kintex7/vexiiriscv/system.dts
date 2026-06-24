@@ -4,7 +4,7 @@
 	#address-cells = <1>;
 	#size-cells = <1>;
 	compatible = "freechips,rocketchip-unknown-dev";
-	model = "Open Source SDR LAB XC7K325T Rocket";
+	model = "Open Source SDR LAB Rocket";
 	chosen {
 		bootargs = "console=liteuart earlycon=liteuart,0xf0001000 swiotlb=noforce rootwait root=/dev/ram0";
 		linux,initrd-start = <0x42000000>;
@@ -72,64 +72,6 @@
 				interrupt-controller;
 			};
 		};
-		L26: cpu@2 {
-			clock-frequency = <100000000>;
-			compatible = "sifive,rocket0", "riscv";
-			d-cache-block-size = <64>;
-			d-cache-sets = <64>;
-			d-cache-size = <16384>;
-			d-tlb-sets = <1>;
-			d-tlb-size = <32>;
-			device_type = "cpu";
-			hardware-exec-breakpoint-count = <1>;
-			i-cache-block-size = <64>;
-			i-cache-sets = <64>;
-			i-cache-size = <16384>;
-			i-tlb-sets = <1>;
-			i-tlb-size = <32>;
-			mmu-type = "riscv,sv39";
-			next-level-cache = <&L8>;
-			reg = <0x2>;
-			riscv,isa = "rv64imafdcZicsr_Zifencei_Zihpm_Xrocket";
-			riscv,pmpgranularity = <4>;
-			riscv,pmpregions = <8>;
-			status = "okay";
-			tlb-split;
-			L24: interrupt-controller {
-				#interrupt-cells = <1>;
-				compatible = "riscv,cpu-intc";
-				interrupt-controller;
-			};
-		};
-		L36: cpu@3 {
-			clock-frequency = <100000000>;
-			compatible = "sifive,rocket0", "riscv";
-			d-cache-block-size = <64>;
-			d-cache-sets = <64>;
-			d-cache-size = <16384>;
-			d-tlb-sets = <1>;
-			d-tlb-size = <32>;
-			device_type = "cpu";
-			hardware-exec-breakpoint-count = <1>;
-			i-cache-block-size = <64>;
-			i-cache-sets = <64>;
-			i-cache-size = <16384>;
-			i-tlb-sets = <1>;
-			i-tlb-size = <32>;
-			mmu-type = "riscv,sv39";
-			next-level-cache = <&L8>;
-			reg = <0x3>;
-			riscv,isa = "rv64imafdcZicsr_Zifencei_Zihpm_Xrocket";
-			riscv,pmpgranularity = <4>;
-			riscv,pmpregions = <8>;
-			status = "okay";
-			tlb-split;
-			L34: interrupt-controller {
-				#interrupt-cells = <1>;
-				compatible = "riscv,cpu-intc";
-				interrupt-controller;
-			};
-		};
 	};
 	L8: memory@40000000 {
 		device_type = "memory";
@@ -149,13 +91,13 @@
 		ranges;
 		L2: clint@f0010000 {
 			compatible = "riscv,clint0";
-			interrupts-extended = <&L4 3 &L4 7 &L14 3 &L14 7 &L24 3 &L24 7 &L34 3 &L34 7>;
+			interrupts-extended = <&L4 3 &L4 7 &L14 3 &L14 7>;
 			reg = <0xf0010000 0x10000>;
 			reg-names = "control";
 		};
 		L3: debug-controller@0 {
 			compatible = "sifive,debug-013", "riscv,debug-013";
-			interrupts-extended = <&L4 0xFFFF &L14 0xFFFF &L24 0xFFFF &L34 0xFFFF>;
+			interrupts-extended = <&L4 0xFFFF &L14 0xFFFF>;
 			reg = <0x0 0x1000>;
 			reg-names = "control";
 		};
@@ -171,7 +113,7 @@
 			#interrupt-cells = <1>;
 			compatible = "riscv,plic0";
 			interrupt-controller;
-			interrupts-extended = <&L4 11 &L4 9 &L14 11 &L14 9 &L24 11 &L24 9 &L34 11 &L34 9>;
+			interrupts-extended = <&L4 11 &L4 9 &L14 11 &L14 9>;
 			reg = <0xf0c00000 0x400000>;
 			reg-names = "control";
 			riscv,max-priority = <7>;
@@ -204,9 +146,9 @@
 			interrupt-parent = <&L1>;
 			interrupts = <4>;
 		};
-		spisdcard0: spisdcard@f0004800 {
+		spisdcard0: spisdcard@f0004000 {
 			compatible = "litex,spisdcard";
-			reg = <0xf0004800 0x100>;
+			reg = <0xf0004000 0x100>;
 			reg-names = "core";
 			clocks = <&sys_clk>;
 		};

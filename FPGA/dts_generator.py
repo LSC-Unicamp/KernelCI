@@ -44,7 +44,7 @@ def generate_dts(json_path, output_dts, output_boot_json):
     opensbi_addr = main_ram_base
     kernel_addr  = main_ram_base + 0x00200000
     initrd_addr  = main_ram_base + 0x02000000
-    dtb_addr     = main_ram_base + 0x02400000
+    dtb_addr     = main_ram_base + 0x02F00000 # 0x02400000
 
     boot_config = {
         "fw_jump.bin": f"0x{opensbi_addr:08x}",

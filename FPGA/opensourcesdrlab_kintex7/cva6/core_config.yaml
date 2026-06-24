@@ -4,12 +4,9 @@
 
 cpu_type: "cva6"
 cpu_variant: "full"
-cpu_count: 1
 
 # Flags de síntese exclusivas deste processador
 core_flags: []
-  #- "--with-jtag-bone"      # Habilita o túnel de debug JTAG->Wishbone específico do CVA6
-  #- "--l2-size=65536"       # Pede 64KB de cache L2 (se o wrapper do CVA6 no LiteX suportar)
 
 # Requisitos mínimos de hardware para este core fazer boot do Linux
 requirements:

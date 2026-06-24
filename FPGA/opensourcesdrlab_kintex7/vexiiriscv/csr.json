@@ -6,11 +6,10 @@
         "timer0": 4026537984,
         "ethmac": 4026540032,
         "ethphy": 4026542080,
-        "identifier_mem": 4026544128,
-        "leds": 4026546176,
-        "sdram": 4026548224,
-        "spisdcard": 4026550272,
-        "video_terminal_vtg": 4026552320
+        "leds": 4026544128,
+        "sdram": 4026546176,
+        "spisdcard": 4026548224,
+        "video_terminal_vtg": 4026550272
     },
     "csr_registers": {
         "ctrl_reset": {
@@ -304,212 +303,212 @@
             "type": "ro"
         },
         "leds_out": {
-            "addr": 4026546176,
+            "addr": 4026544128,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_control": {
-            "addr": 4026548224,
+            "addr": 4026546176,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_command": {
-            "addr": 4026548228,
+            "addr": 4026546180,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_command_issue": {
-            "addr": 4026548232,
+            "addr": 4026546184,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_address": {
-            "addr": 4026548236,
+            "addr": 4026546188,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_baddress": {
-            "addr": 4026548240,
+            "addr": 4026546192,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi0_wrdata": {
-            "addr": 4026548244,
+            "addr": 4026546196,
             "size": 2,
             "type": "rw"
         },
         "sdram_dfii_pi0_rddata": {
-            "addr": 4026548252,
+            "addr": 4026546204,
             "size": 2,
             "type": "ro"
         },
         "sdram_dfii_pi1_command": {
-            "addr": 4026548260,
+            "addr": 4026546212,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi1_command_issue": {
-            "addr": 4026548264,
+            "addr": 4026546216,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi1_address": {
-            "addr": 4026548268,
+            "addr": 4026546220,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi1_baddress": {
-            "addr": 4026548272,
+            "addr": 4026546224,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi1_wrdata": {
-            "addr": 4026548276,
+            "addr": 4026546228,
             "size": 2,
             "type": "rw"
         },
         "sdram_dfii_pi1_rddata": {
-            "addr": 4026548284,
+            "addr": 4026546236,
             "size": 2,
             "type": "ro"
         },
         "sdram_dfii_pi2_command": {
-            "addr": 4026548292,
+            "addr": 4026546244,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi2_command_issue": {
-            "addr": 4026548296,
+            "addr": 4026546248,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi2_address": {
-            "addr": 4026548300,
+            "addr": 4026546252,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi2_baddress": {
-            "addr": 4026548304,
+            "addr": 4026546256,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi2_wrdata": {
-            "addr": 4026548308,
+            "addr": 4026546260,
             "size": 2,
             "type": "rw"
         },
         "sdram_dfii_pi2_rddata": {
-            "addr": 4026548316,
+            "addr": 4026546268,
             "size": 2,
             "type": "ro"
         },
         "sdram_dfii_pi3_command": {
-            "addr": 4026548324,
+            "addr": 4026546276,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi3_command_issue": {
-            "addr": 4026548328,
+            "addr": 4026546280,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi3_address": {
-            "addr": 4026548332,
+            "addr": 4026546284,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi3_baddress": {
-            "addr": 4026548336,
+            "addr": 4026546288,
             "size": 1,
             "type": "rw"
         },
         "sdram_dfii_pi3_wrdata": {
-            "addr": 4026548340,
+            "addr": 4026546292,
             "size": 2,
             "type": "rw"
         },
         "sdram_dfii_pi3_rddata": {
-            "addr": 4026548348,
+            "addr": 4026546300,
             "size": 2,
             "type": "ro"
         },
         "spisdcard_control": {
-            "addr": 4026550272,
+            "addr": 4026548224,
             "size": 1,
             "type": "rw"
         },
         "spisdcard_status": {
-            "addr": 4026550276,
+            "addr": 4026548228,
             "size": 1,
             "type": "ro"
         },
         "spisdcard_mosi": {
-            "addr": 4026550280,
+            "addr": 4026548232,
             "size": 1,
             "type": "rw"
         },
         "spisdcard_miso": {
-            "addr": 4026550284,
+            "addr": 4026548236,
             "size": 1,
             "type": "ro"
         },
         "spisdcard_cs": {
-            "addr": 4026550288,
+            "addr": 4026548240,
             "size": 1,
             "type": "rw"
         },
         "spisdcard_loopback": {
-            "addr": 4026550292,
+            "addr": 4026548244,
             "size": 1,
             "type": "rw"
         },
         "spisdcard_clk_divider": {
-            "addr": 4026550296,
+            "addr": 4026548248,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_enable": {
-            "addr": 4026552320,
+            "addr": 4026550272,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_hres": {
-            "addr": 4026552324,
+            "addr": 4026550276,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_hsync_start": {
-            "addr": 4026552328,
+            "addr": 4026550280,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_hsync_end": {
-            "addr": 4026552332,
+            "addr": 4026550284,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_hscan": {
-            "addr": 4026552336,
+            "addr": 4026550288,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_vres": {
-            "addr": 4026552340,
+            "addr": 4026550292,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_vsync_start": {
-            "addr": 4026552344,
+            "addr": 4026550296,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_vsync_end": {
-            "addr": 4026552348,
+            "addr": 4026550300,
             "size": 1,
             "type": "rw"
         },
         "video_terminal_vtg_vscan": {
-            "addr": 4026552352,
+            "addr": 4026550304,
             "size": 1,
             "type": "rw"
         }
@@ -519,16 +518,15 @@
         "config_clock_frequency": 100000000,
         "config_cpu_has_interrupt": null,
         "config_cpu_reset_addr": 0,
-        "config_cpu_count": 4,
-        "config_cpu_isa": "rv64i2p0_mafdc_zicsr_zifencei_zicntr_zihpm",
+        "config_cpu_count": 2,
+        "config_cpu_isa": "rv64i2p0_mafdc_zicntr_zifencei_zicsr_zihpm",
         "config_cpu_mmu": "sv39",
         "config_cpu_type_vexiiriscv": null,
         "config_cpu_variant_debian": null,
         "config_cpu_family": "riscv",
         "config_cpu_name": "vexiiriscv",
-        "config_cpu_human_name": "VexiiRiscv (rv64i2p0_mafdc_zicsr_zifencei_zicntr_zihpm)",
+        "config_cpu_human_name": "VexiiRiscv (rv64i2p0_mafdc_zicntr_zifencei_zicsr_zihpm)",
         "config_cpu_nop": "nop",
-        "config_identifier": "Open Source SDR LAB XC7K325T 2026-06-17 01:01:14",
         "config_l2_size": 8192,
         "localip1": 192,
         "localip2": 168,

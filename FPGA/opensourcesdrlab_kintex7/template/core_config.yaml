@@ -1,0 +1,16 @@
+# ==========================================
+# CORE CONFIG: Template core (xlen-bit)
+# ==========================================
+
+cpu_type: "core name"
+cpu_variant: "variant name"
+
+# Flags de síntese exclusivas deste processador
+core_flags: 
+  - "--cpu-mem-width 2"
+  - "--cpu-num-cores 4"
+
+# Requisitos mínimos de hardware para este core fazer boot do Linux
+requirements:
+  min_ram_mb: 32
+  needs_opensbi: true
