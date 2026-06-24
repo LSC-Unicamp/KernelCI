@@ -1,6 +1,5 @@
 {
-    "board": "nexys4ddr",
-    "core": "vexiiriscv",
-    "fw_jump": "fw_jump.bin",
-    "dtb": "system.dtb"
+    "fw_jump.bin": "0x40000000",
+    "Image": "0x40200000",
+    "rootfs.cpio.gz": "0x42000000"
 }

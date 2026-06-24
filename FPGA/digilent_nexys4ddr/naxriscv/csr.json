@@ -6,10 +6,10 @@
         "timer0": 4026537984,
         "ethmac": 4026540032,
         "ethphy": 4026542080,
-        "leds": 4026544128,
-        "sdram": 4026546176,
-        "spisdcard": 4026548224,
-        "video_terminal_vtg": 4026550272
+        "identifier_mem": 4026544128,
+        "leds": 4026546176,
+        "sdcard": 4026548224,
+        "sdram": 4026550272
     },
     "csr_registers": {
         "ctrl_reset": {
@@ -52,73 +52,43 @@
             "size": 1,
             "type": "rw"
         },
-        "ddrphy_cdly_rst": {
+        "ddrphy_rdly_dq_rst": {
             "addr": 4026533908,
             "size": 1,
             "type": "rw"
         },
-        "ddrphy_cdly_inc": {
+        "ddrphy_rdly_dq_inc": {
             "addr": 4026533912,
             "size": 1,
             "type": "rw"
         },
-        "ddrphy_rdly_dq_rst": {
+        "ddrphy_rdly_dq_bitslip_rst": {
             "addr": 4026533916,
             "size": 1,
             "type": "rw"
         },
-        "ddrphy_rdly_dq_inc": {
+        "ddrphy_rdly_dq_bitslip": {
             "addr": 4026533920,
             "size": 1,
             "type": "rw"
         },
-        "ddrphy_rdly_dq_bitslip_rst": {
+        "ddrphy_wdly_dq_bitslip_rst": {
             "addr": 4026533924,
             "size": 1,
             "type": "rw"
         },
-        "ddrphy_rdly_dq_bitslip": {
+        "ddrphy_wdly_dq_bitslip": {
             "addr": 4026533928,
             "size": 1,
             "type": "rw"
         },
-        "ddrphy_wdly_dq_rst": {
+        "ddrphy_rdphase": {
             "addr": 4026533932,
             "size": 1,
             "type": "rw"
         },
-        "ddrphy_wdly_dq_inc": {
-            "addr": 4026533936,
-            "size": 1,
-            "type": "rw"
-        },
-        "ddrphy_wdly_dqs_rst": {
-            "addr": 4026533940,
-            "size": 1,
-            "type": "rw"
-        },
-        "ddrphy_wdly_dqs_inc": {
-            "addr": 4026533944,
-            "size": 1,
-            "type": "rw"
-        },
-        "ddrphy_wdly_dq_bitslip_rst": {
-            "addr": 4026533948,
-            "size": 1,
-            "type": "rw"
-        },
-        "ddrphy_wdly_dq_bitslip": {
-            "addr": 4026533952,
-            "size": 1,
-            "type": "rw"
-        },
-        "ddrphy_rdphase": {
-            "addr": 4026533956,
-            "size": 1,
-            "type": "rw"
-        },
         "ddrphy_wrphase": {
-            "addr": 4026533960,
+            "addr": 4026533936,
             "size": 1,
             "type": "rw"
         },
@@ -303,230 +273,250 @@
             "type": "ro"
         },
         "leds_out": {
-            "addr": 4026544128,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_control": {
             "addr": 4026546176,
             "size": 1,
             "type": "rw"
         },
-        "sdram_dfii_pi0_command": {
-            "addr": 4026546180,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi0_command_issue": {
-            "addr": 4026546184,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi0_address": {
-            "addr": 4026546188,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi0_baddress": {
-            "addr": 4026546192,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi0_wrdata": {
-            "addr": 4026546196,
-            "size": 2,
-            "type": "rw"
-        },
-        "sdram_dfii_pi0_rddata": {
-            "addr": 4026546204,
-            "size": 2,
-            "type": "ro"
-        },
-        "sdram_dfii_pi1_command": {
-            "addr": 4026546212,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi1_command_issue": {
-            "addr": 4026546216,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi1_address": {
-            "addr": 4026546220,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi1_baddress": {
-            "addr": 4026546224,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi1_wrdata": {
-            "addr": 4026546228,
-            "size": 2,
-            "type": "rw"
-        },
-        "sdram_dfii_pi1_rddata": {
-            "addr": 4026546236,
-            "size": 2,
-            "type": "ro"
-        },
-        "sdram_dfii_pi2_command": {
-            "addr": 4026546244,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi2_command_issue": {
-            "addr": 4026546248,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi2_address": {
-            "addr": 4026546252,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi2_baddress": {
-            "addr": 4026546256,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi2_wrdata": {
-            "addr": 4026546260,
-            "size": 2,
-            "type": "rw"
-        },
-        "sdram_dfii_pi2_rddata": {
-            "addr": 4026546268,
-            "size": 2,
-            "type": "ro"
-        },
-        "sdram_dfii_pi3_command": {
-            "addr": 4026546276,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi3_command_issue": {
-            "addr": 4026546280,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi3_address": {
-            "addr": 4026546284,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi3_baddress": {
-            "addr": 4026546288,
-            "size": 1,
-            "type": "rw"
-        },
-        "sdram_dfii_pi3_wrdata": {
-            "addr": 4026546292,
-            "size": 2,
-            "type": "rw"
-        },
-        "sdram_dfii_pi3_rddata": {
-            "addr": 4026546300,
-            "size": 2,
-            "type": "ro"
-        },
-        "spisdcard_control": {
+        "sdcard_phy_card_detect": {
             "addr": 4026548224,
             "size": 1,
-            "type": "rw"
-        },
-        "spisdcard_status": {
-            "addr": 4026548228,
-            "size": 1,
             "type": "ro"
         },
-        "spisdcard_mosi": {
+        "sdcard_phy_clocker_divider": {
+            "addr": 4026548228,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_phy_init_initialize": {
             "addr": 4026548232,
             "size": 1,
             "type": "rw"
         },
-        "spisdcard_miso": {
+        "sdcard_phy_cmdr_timeout": {
             "addr": 4026548236,
-            "size": 1,
-            "type": "ro"
-        },
-        "spisdcard_cs": {
-            "addr": 4026548240,
             "size": 1,
             "type": "rw"
         },
-        "spisdcard_loopback": {
+        "sdcard_phy_dataw_status": {
+            "addr": 4026548240,
+            "size": 1,
+            "type": "ro"
+        },
+        "sdcard_phy_datar_timeout": {
             "addr": 4026548244,
             "size": 1,
             "type": "rw"
         },
-        "spisdcard_clk_divider": {
+        "sdcard_phy_settings": {
             "addr": 4026548248,
             "size": 1,
             "type": "rw"
         },
-        "video_terminal_vtg_enable": {
+        "sdcard_core_cmd_argument": {
+            "addr": 4026548252,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_core_cmd_command": {
+            "addr": 4026548256,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_core_cmd_send": {
+            "addr": 4026548260,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_core_cmd_response": {
+            "addr": 4026548264,
+            "size": 4,
+            "type": "ro"
+        },
+        "sdcard_core_cmd_event": {
+            "addr": 4026548280,
+            "size": 1,
+            "type": "ro"
+        },
+        "sdcard_core_data_event": {
+            "addr": 4026548284,
+            "size": 1,
+            "type": "ro"
+        },
+        "sdcard_core_block_length": {
+            "addr": 4026548288,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_core_block_count": {
+            "addr": 4026548292,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_block2mem_dma_base": {
+            "addr": 4026548296,
+            "size": 2,
+            "type": "rw"
+        },
+        "sdcard_block2mem_dma_length": {
+            "addr": 4026548304,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_block2mem_dma_enable": {
+            "addr": 4026548308,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_block2mem_dma_done": {
+            "addr": 4026548312,
+            "size": 1,
+            "type": "ro"
+        },
+        "sdcard_block2mem_dma_loop": {
+            "addr": 4026548316,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_block2mem_dma_offset": {
+            "addr": 4026548320,
+            "size": 1,
+            "type": "ro"
+        },
+        "sdcard_mem2block_dma_base": {
+            "addr": 4026548324,
+            "size": 2,
+            "type": "rw"
+        },
+        "sdcard_mem2block_dma_length": {
+            "addr": 4026548332,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_mem2block_dma_enable": {
+            "addr": 4026548336,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_mem2block_dma_done": {
+            "addr": 4026548340,
+            "size": 1,
+            "type": "ro"
+        },
+        "sdcard_mem2block_dma_loop": {
+            "addr": 4026548344,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_mem2block_dma_offset": {
+            "addr": 4026548348,
+            "size": 1,
+            "type": "ro"
+        },
+        "sdcard_ev_status": {
+            "addr": 4026548352,
+            "size": 1,
+            "type": "ro"
+        },
+        "sdcard_ev_pending": {
+            "addr": 4026548356,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdcard_ev_enable": {
+            "addr": 4026548360,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_control": {
             "addr": 4026550272,
             "size": 1,
             "type": "rw"
         },
-        "video_terminal_vtg_hres": {
+        "sdram_dfii_pi0_command": {
             "addr": 4026550276,
             "size": 1,
             "type": "rw"
         },
-        "video_terminal_vtg_hsync_start": {
+        "sdram_dfii_pi0_command_issue": {
             "addr": 4026550280,
             "size": 1,
             "type": "rw"
         },
-        "video_terminal_vtg_hsync_end": {
+        "sdram_dfii_pi0_address": {
             "addr": 4026550284,
             "size": 1,
             "type": "rw"
         },
-        "video_terminal_vtg_hscan": {
+        "sdram_dfii_pi0_baddress": {
             "addr": 4026550288,
             "size": 1,
             "type": "rw"
         },
-        "video_terminal_vtg_vres": {
+        "sdram_dfii_pi0_wrdata": {
             "addr": 4026550292,
             "size": 1,
             "type": "rw"
         },
-        "video_terminal_vtg_vsync_start": {
+        "sdram_dfii_pi0_rddata": {
             "addr": 4026550296,
             "size": 1,
-            "type": "rw"
+            "type": "ro"
         },
-        "video_terminal_vtg_vsync_end": {
+        "sdram_dfii_pi1_command": {
             "addr": 4026550300,
             "size": 1,
             "type": "rw"
         },
-        "video_terminal_vtg_vscan": {
+        "sdram_dfii_pi1_command_issue": {
             "addr": 4026550304,
             "size": 1,
             "type": "rw"
+        },
+        "sdram_dfii_pi1_address": {
+            "addr": 4026550308,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi1_baddress": {
+            "addr": 4026550312,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi1_wrdata": {
+            "addr": 4026550316,
+            "size": 1,
+            "type": "rw"
+        },
+        "sdram_dfii_pi1_rddata": {
+            "addr": 4026550320,
+            "size": 1,
+            "type": "ro"
         }
     },
     "constants": {
-        "config_platform_name": "opensourcesdrlab_kintex7",
-        "config_clock_frequency": 100000000,
+        "config_platform_name": "digilent_nexys4ddr",
+        "config_clock_frequency": 50000000,
         "config_cpu_has_interrupt": null,
         "config_cpu_reset_addr": 0,
-        "config_cpu_count": 2,
-        "config_cpu_isa": "rv64i2p0_mafdc_zicntr_zihpm_zicsr_zifencei",
+        "config_cpu_count": 1,
+        "config_cpu_isa": "rv64i2p0_mafdc",
         "config_cpu_mmu": "sv39",
-        "config_cpu_type_vexiiriscv": null,
-        "config_cpu_variant_debian": null,
+        "config_cpu_dcache_size": 16384,
+        "config_cpu_dcache_ways": 4,
+        "config_cpu_dcache_block_size": 64,
+        "config_cpu_icache_size": 16384,
+        "config_cpu_icache_ways": 4,
+        "config_cpu_icache_block_size": 64,
+        "config_cpu_l2cache_size": 131072,
+        "config_cpu_l2cache_ways": 8,
+        "config_cpu_l2cache_block_size": 64,
+        "config_cpu_type_naxriscv": null,
+        "config_cpu_variant_standard": null,
         "config_cpu_family": "riscv",
-        "config_cpu_name": "vexiiriscv",
-        "config_cpu_human_name": "VexiiRiscv (rv64i2p0_mafdc_zicntr_zihpm_zicsr_zifencei)",
+        "config_cpu_name": "naxriscv",
+        "config_cpu_human_name": "NaxRiscv 64-bit",
         "config_cpu_nop": "nop",
+        "config_identifier": "LiteX SoC on Nexys4DDR 2026-06-24 01:33:51",
         "config_l2_size": 8192,
         "localip1": 192,
         "localip2": 168,
@@ -546,8 +536,9 @@
         "ethmac_rx_slots": 2,
         "ethmac_tx_slots": 2,
         "ethmac_slot_size": 2048,
-        "config_cpu_interrupts": 4,
+        "config_cpu_interrupts": 5,
         "ethmac_interrupt": 3,
+        "sdcard_interrupt": 4,
         "timer0_interrupt": 2,
         "uart_interrupt": 1
     },
@@ -579,7 +570,7 @@
         },
         "main_ram": {
             "base": 1073741824,
-            "size": 1073741824,
+            "size": 134217728,
             "type": "cached"
         },
         "ethmac": {
@@ -605,14 +596,13 @@
     },
     "cores": {
         "ctrl": "SoCController",
-        "ddrphy": "K7DDRPHY",
+        "ddrphy": "A7DDRPHY",
         "uart": "UART",
         "timer0": "Timer",
         "ethmac": "LiteEthMAC",
-        "ethphy": "LiteEthPHYRGMII",
+        "ethphy": "LiteEthPHYRMII",
         "leds": "LedChaser",
-        "sdram": "LiteDRAMCore",
-        "spisdcard": "SPIMaster",
-        "video_terminal_vtg": "VideoTimingGenerator"
+        "sdcard": "LiteSDCard",
+        "sdram": "LiteDRAMCore"
     }
 }

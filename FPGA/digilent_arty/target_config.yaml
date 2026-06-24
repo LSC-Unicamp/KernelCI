@@ -24,6 +24,6 @@ target_flags:
 
 # Metadados de infraestrutura (ignorados pelo LiteX)
 lab_bench:
-  bench_id: "arrtya7_dookan_00"
+  bench_id: "artya7_dookan_00"
   jtag_cable: "ft2232h"
   power_switch_port: 4

@@ -5,8 +5,8 @@ Arquivos deste target.
 ## Conteúdo
 
 - soc.sh
-- system.dts
+- system.dts (gerado)
 - system.dtb (gerado)
 - fw_jump.bin (gerado)
-- boot.json
+- boot.json (gerado)
 - config.yaml
